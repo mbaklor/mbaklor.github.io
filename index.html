@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Freecell</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <div id="alert">alert!</div>
+        <main>
+            <section class="card-slots">
+                <div class="card-slot" id="slot1" data-filled="false"></div>
+                <div class="card-slot" id="slot2" data-filled="false"></div>
+                <div class="card-slot" id="slot3" data-filled="false"></div>
+                <div class="card-slot" id="slot4" data-filled="false"></div>
+            </section>
+            <section class="reset-button">
+                <img src="oddish-card.png" id="reset-cards" alt="reset" />
+            </section>
+            <section class="suit-piles">
+                <div class="suit-pile" id="spade" data-empty="true" data-color="black" data-next="♠A"><span class="suit">♠</span></div>
+                <div class="suit-pile" id="heart" data-empty="true" data-color="red" data-next="♥A"><span class="suit">♥</span></div>
+                <div class="suit-pile" id="club" data-empty="true" data-color="black" data-next="♣A"><span class="suit">♣</span></div>
+                <div class="suit-pile" id="diamond" data-empty="true" data-color="red" data-next="♦A"><span class="suit">♦</span></div>
+            </section>
+
+            <section class="card-board">
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                            <div class="card" draggable="true" data-stack="7" data-color="">
+                                                <span class="card-text top-text"></span>
+                                                <span class="card-text card-face"></span>
+                                                <span class="card-text bottom-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                            <div class="card" draggable="true" data-stack="7" data-color="">
+                                                <span class="card-text top-text"></span>
+                                                <span class="card-text card-face"></span>
+                                                <span class="card-text bottom-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                            <div class="card" draggable="true" data-stack="7" data-color="">
+                                                <span class="card-text top-text"></span>
+                                                <span class="card-text card-face"></span>
+                                                <span class="card-text bottom-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                            <div class="card" draggable="true" data-stack="7" data-color="">
+                                                <span class="card-text top-text"></span>
+                                                <span class="card-text card-face"></span>
+                                                <span class="card-text bottom-text"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-section" data-filled="true">
+                    <div class="card" draggable="true" data-stack="1" data-color="">
+                        <span class="card-text top-text"></span>
+                        <span class="card-text card-face"></span>
+                        <span class="card-text bottom-text"></span>
+                        <div class="card" draggable="true" data-stack="2" data-color="">
+                            <span class="card-text top-text"></span>
+                            <span class="card-text card-face"></span>
+                            <span class="card-text bottom-text"></span>
+                            <div class="card" draggable="true" data-stack="3" data-color="">
+                                <span class="card-text top-text"></span>
+                                <span class="card-text card-face"></span>
+                                <span class="card-text bottom-text"></span>
+                                <div class="card" draggable="true" data-stack="4" data-color="">
+                                    <span class="card-text top-text"></span>
+                                    <span class="card-text card-face"></span>
+                                    <span class="card-text bottom-text"></span>
+                                    <div class="card" draggable="true" data-stack="5" data-color="">
+                                        <span class="card-text top-text"></span>
+                                        <span class="card-text card-face"></span>
+                                        <span class="card-text bottom-text"></span>
+                                        <div class="card" draggable="true" data-stack="6" data-color="">
+                                            <span class="card-text top-text"></span>
+                                            <span class="card-text card-face"></span>
+                                            <span class="card-text bottom-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section id="float-touch-zone"></section>
+        </main>
+    </body>
+</html>
